@@ -1,0 +1,150 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:ecui="urn:import:com.electriccloud.commander.gwt.client.ui"
+             xmlns:form="urn:ui:com.electriccloud.commander.gwt.uibinder">
+
+    <ui:style field="style"
+              type="ecplugins.SSO_Configurator.client.SSOConfiguratorAuthenticationView.UIStyle">
+
+        @external gwt-PopupPanel;
+        @external form-value;
+        @external gwt-TextBox;
+        @external gwt-PasswordTextBox;
+
+        .fullWidth {
+            width: 100%;
+        }
+
+        .wizardHeader {
+            background-color: #636466;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .labelHeader {
+            font-size: 16px;
+            color: white;
+            padding: 5px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .labelDesc {
+            font-size: 13px;
+            color: white;
+            padding-left: 5px;
+        }
+
+        td.form-value input.gwt-TextBox {
+            border: thin solid #B3B8C8;
+            height: 15px;
+            width: 200px;
+        }
+
+        div.gwt-PopupPanel td.form-value input.gwt-PasswordTextBox {
+            border: thin solid #B3B8C8;
+            width: 200px;
+            height: 15px;
+        }
+
+        .formPadding {
+            padding-left: 14px;
+        }
+
+        .inputField>td>input {
+            height: 20px;
+        }
+
+    </ui:style>
+    <g:VerticalPanel addStyleNames="{style.fullWidth}">
+        <g:CaptionPanel addStyleNames="{style.wizardHeader}">
+
+            <g:HTMLPanel debugId="headerPanel" width="100%">
+                <g:Label text="Authentication Options"
+                         addStyleNames="{style.labelHeader}"></g:Label>
+                <g:Label addStyleNames="{style.labelDesc}"
+                         text="Credentials for logging into target machines"></g:Label>
+            </g:HTMLPanel>
+
+        </g:CaptionPanel>
+        <g:HTMLPanel debugId="bodyPanel"
+                     addStyleNames="{style.formPadding}">
+            <ecui:FormBuilder ui:field="m_form">
+                <form:formElement ui:field="m_authType">
+                    <form:label>Authentication Type:</form:label>
+                    <form:property>authType</form:property>
+                    <form:documentation>Type of Authentication.
+                    </form:documentation>
+                    <form:type>widget</form:type>
+                </form:formElement>
+                <form:formElement>
+                    <form:label>User Name:</form:label>
+                    <form:property>sshUser</form:property>
+                    <form:documentation>SSH User Name.
+                    </form:documentation>
+                    <form:type>entry</form:type>
+                </form:formElement>
+                <form:formElement ui:field="m_passwordBox" addStyleNames="{style.inputField}">
+                    <form:label>Password:</form:label>
+                    <form:property>sshPwd</form:property>
+                    <form:documentation>SSH Password.
+                    </form:documentation>
+                    <form:type>widget</form:type>
+                </form:formElement>
+                <form:formElement>
+                    <form:label>Public Key Path:</form:label>
+                    <form:property>sshPublicKeyPath</form:property>
+                    <form:documentation>Path to the SSH public key
+                        file.
+                    </form:documentation>
+                    <form:type>entry</form:type>
+                </form:formElement>
+                <form:formElement>
+                    <form:label>Private Key Path:</form:label>
+                    <form:property>sshPrivateKeyPath</form:property>
+                    <form:documentation>Path to the SSH private key
+                        file.
+                    </form:documentation>
+                    <form:type>entry</form:type>
+                </form:formElement>
+                <form:formElement ui:field="m_passphraseBox" addStyleNames="{style.inputField}">
+                    <form:label>Passphrase:</form:label>
+                    <form:property>passPhrase</form:property>
+                    <form:documentation>Password phrase for SSH Key.
+                    </form:documentation>
+                    <form:type>widget</form:type>
+                </form:formElement>
+                <form:formElement>
+                    <form:label>User Name:</form:label>
+                    <form:property>windowsUser</form:property>
+                    <form:documentation>Windows User Name.
+                    </form:documentation>
+                    <form:type>entry</form:type>
+                </form:formElement>
+                <form:formElement ui:field="m_windowsPasswordBox" addStyleNames="{style.inputField}">
+                    <form:label>Password:</form:label>
+                    <form:property>windowsPassword</form:property>
+                    <form:documentation>Windows Password.
+                    </form:documentation>
+                    <form:type>widget</form:type>
+                </form:formElement>
+                <form:formElement ui:field="m_windowsAccount">
+                    <form:label>Service Account:</form:label>
+                    <form:property>windowsAccount</form:property>
+                    <form:documentation>Built-in service account.
+                    </form:documentation>
+                    <form:type>widget</form:type>
+                </form:formElement>
+                <form:formElement>
+                    <form:label>Domain:</form:label>
+                    <form:property>connectionDomain</form:property>
+                    <form:documentation>Windows User Domain.
+                    </form:documentation>
+                    <form:type>entry</form:type>
+                </form:formElement>
+            </ecui:FormBuilder>
+        </g:HTMLPanel>
+
+    </g:VerticalPanel>
+</ui:UiBinder>

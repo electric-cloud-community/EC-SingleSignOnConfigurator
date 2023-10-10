@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <key>@PLUGIN_KEY@</key>
+    <version>@PLUGIN_VERSION@</version>
+    <label>@PLUGIN_KEY@</label>
+    <description>SSO Configurator</description>
+    <category>System</category>
+    <author>CloudBees</author>
+    <authorUrl>http://www.electric-cloud.com/support</authorUrl>
+    <repositoryUrl>https://github.com/electric-cloud-community/EC-SingleSignOnConfigurator</repositoryUrl>
+    <commander-version min="4.2"/>
+    <components>
+      <component name="SSOConfiguratorParameterPanel">
+              <javascript>war/ecplugins.SSO_Configurator.SSOConfiguratorParameterPanel/ecplugins.SSO_Configurator.SSOConfiguratorParameterPanel.nocache.js</javascript>
+      </component>
+    </components>
+    <customTypes>
+        <customType name="CAManagement">
+            <parameterPanel>
+                <javascript>war/ecplugins.SSO_Configurator.SSOConfiguratorParameterPanel/ecplugins.SSO_Configurator.SSOConfiguratorParameterPanel.nocache.js</javascript>
+                <help>/commander/pages/@PLUGIN_NAME@/@PLUGIN_KEY@_help?s=Administration&amp;ss=Plugins#scp</help>
+            </parameterPanel>
+        </customType>
+    </customTypes>
+</plugin>

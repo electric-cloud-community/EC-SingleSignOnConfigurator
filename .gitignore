@@ -1,0 +1,13 @@
+# Maven output directories
+target/
+
+# Generated during builds and tests (should come from target, ideally)
+${outDir}
+
+#
+*.tmp
+*~
+.idea/
+.mvn/
+**/*.iml
+out/

@@ -1,0 +1,209 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:ecui="urn:import:com.electriccloud.commander.gwt.client.ui"
+             xmlns:form="urn:ui:com.electriccloud.commander.gwt.uibinder"
+             xmlns:cellview="urn:import:com.google.gwt.user.cellview.client">
+
+    <ui:with field="bundled"
+             type="com.electriccloud.commander.gwt.client.ui.BundledResources"/>
+    <ui:with field="internal"
+             type="ecinternal.client.ui.InternalResources"/>
+    <ui:with field="i18N"
+             type="ecinternal.client.ui.InternalMessages"/>
+    <ui:style field="style"
+              type="ecplugins.SSO_Configurator.client.SSOConfiguratorTargetView.UIStyle">
+
+        .fullWidth {
+            width: 100%;
+        }
+
+        .loading {
+            width: 100%;
+            text-align: center;
+            vertical-align: middle;
+            margin: 10px 30px;
+        }
+
+        .wizardHeader {
+            background-color: #636466;
+            border-style: solid;
+            border-width: 1px;
+            border-color: black;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .labelHeader {
+            font-size: 16px;
+            color: white;
+            padding: 5px;
+        }
+
+        .labelDesc {
+            font-size: 13px;
+            color: white;
+            padding-left: 5px;
+        }
+
+        .labelContent {
+            padding-left: 15px;
+        }
+
+        .gridPadding {
+            padding: 10px 0px 10px 14px;
+        }
+
+        .gridTextAlign {
+            text-align: right;
+        }
+
+        .labelFontMedium {
+            font: 14px arial, sans-serif bold;
+            color: black;
+            padding-top: 3px;
+        }
+
+        .labelFontBig {
+            font: 14px arial, sans-serif bold;
+            color: black;
+            padding-top: 3px;
+        }
+
+        .labelFontSmall {
+            font: 14px arial, sans-serif;
+            color: black;
+            text-align: right;
+            padding-top: 5px;
+        }
+
+        .labelFontSmallBold {
+            font: 12px arial, sans-serif bolder;
+            color: black;
+            padding-top: 5px;
+            padding-left: 3px;
+        }
+
+        .textStyle {
+            font-size: 14px;
+            cursor: help;
+            border-bottom: thin dashed rgb(216, 216, 216);
+            width: 296px;
+
+        }
+
+        .hostPort {
+            width: 454px;
+            max-width: 454px;
+            min-width: 454px;
+        }
+
+        .publishLink {
+            font: 14px arial, sans-serif;
+            color: #0000ff;
+            text-decoration: underline;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 0;
+        }
+
+        .publishPanel {
+            font-size: 14px !important;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .helpPanel > tbody > tr > td {
+            text-align: right;
+            padding-right: 15px;
+        }
+
+        .cellTable {
+            margin: auto;
+        }
+
+        .cellTable a {
+            color: #0000ff;
+        }
+
+        .cellTable a:hover {
+            text-decoration: underline;
+        }
+
+        .gridTextValueAlign {
+            text-align: left;
+        }
+
+        .textArea td:first-child {
+            /*display: block;*/
+            /*position: relative;*/
+        }
+
+        .disableEntry {
+            pointer-events: none;
+        }
+
+        .formStyle {
+            padding: 10px;
+        }
+
+    </ui:style>
+    <g:VerticalPanel addStyleNames="{style.fullWidth}">
+        <g:HorizontalPanel>
+
+            <g:cell width="70%">
+                <g:VerticalPanel>
+                    <g:CaptionPanel addStyleNames="{style.wizardHeader}">
+
+                        <g:HTMLPanel debugId="headerPanel" width="100%">
+                            <g:Label text="Deployment Targets"
+                                     addStyleNames="{style.labelHeader}"></g:Label>
+                            <g:Label addStyleNames="{style.labelDesc}"
+                                     text="Details for the target host machines where the Keytab would be deployed to"></g:Label>
+                        </g:HTMLPanel>
+
+                    </g:CaptionPanel>
+                    <g:HTMLPanel debugId="deployKeytabView" addStyleNames="{style.formStyle}">
+
+                        <ecui:FormBuilder ui:field="m_form">
+                            <form:formElement ui:field="m_resourceNameTemplate">
+                                <form:label>Target Server Operating System</form:label>
+                                <form:property>resourceNameTemplate</form:property>
+                                <form:documentation> Operating System of the Target Server where keytab will be deployed to</form:documentation>
+                                <form:type>widget</form:type>
+                            </form:formElement>
+                            <form:formElement addStyleNames="{style.textArea}">
+                                <!--ui:field="m_hostPort"-->
+                                <form:label>Target Server Hostnames or IP Addresses:</form:label>
+                                <form:property>hostPort</form:property>
+                                <form:documentation>Target Server Hostnames or IP Addresses</form:documentation>
+                                <form:type>textarea</form:type>
+                            </form:formElement>
+                            <form:formElement ui:field="m_resource">
+                                <form:label>Driving Resource:</form:label>
+                                <form:property>drivingResource</form:property>
+                                <form:documentation>Driving Resource</form:documentation>
+                                <form:type>widget</form:type>
+                            </form:formElement>
+                            <form:formElement >
+                                <form:label>Server Installation Directory</form:label>
+                                <form:property>installDirectory</form:property>
+                                <form:documentation>Installation directory where the server is installed</form:documentation>
+                                <form:type>entry</form:type>
+                            </form:formElement>
+                            <form:formElement >
+                                <form:label>Restart Server:</form:label>
+                                <form:property>restartServer</form:property>
+                                <form:documentation>If true, the server would be restarted after keytab is deployed</form:documentation>
+                                <form:type>checkbox</form:type>
+                                <form:checkedValue>1</form:checkedValue>
+                                <form:uncheckedValue>0</form:uncheckedValue>
+                                <form:initiallyChecked>0</form:initiallyChecked>
+                            </form:formElement>
+                        </ecui:FormBuilder>
+                    </g:HTMLPanel>
+                </g:VerticalPanel>
+            </g:cell>
+        </g:HorizontalPanel>
+    </g:VerticalPanel>
+</ui:UiBinder>

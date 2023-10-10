@@ -1,0 +1,30 @@
+<module>
+    <entry-point
+            class="ecplugins.SSO_Configurator.client.SSOConfiguratorManagementPanelFactory"/>
+    <inherits name="com.electriccloud.commander.gwt.ComponentBase"/>
+    <inherits name="ecinternal.ECInternal"/>
+
+    <inherits name="com.gwtplatform.mvp.Mvp"/>
+    <inherits name="com.google.gwt.uibinder.GinUiBinder"/>
+    <inherits name="com.google.gwt.logging.Logging"/>
+    <inherits name='com.google.gwt.inject.Inject'/>
+    <inherits name="com.google.gwt.place.Place"/>
+
+    <!-- The following property limits the plugin to work with Firefox.  This saves tremendously
+    during development because the gwt compiler has to generate less <language,browser> sets of
+    javascript files. Be careful to re-comment this when doing a build of your plugin that you
+    plan to publish!
+    -->
+    <set-configuration-property
+            name="gin.ginjector"
+            value="ecplugins.SSO_Configurator.client.SSOConfiguratorGinjector"/>
+    <set-configuration-property name="UiBinder.useSafeHtmlTemplates"
+                                value="true"/>
+    <set-property name="locale" value="default"/>
+    <!--property used for parsing FormBuilder -->
+    <extend-configuration-property name="gwt.uibinder.elementparser"
+                                   value="com.electriccloud.commander.gwt.client.ui.FormBuilder:com.electriccloud.commander.gwt.client.uibinder.elementparsers.FormBuilderParser"/>
+
+    <add-linker name="xsiframe"/>
+</module>
+

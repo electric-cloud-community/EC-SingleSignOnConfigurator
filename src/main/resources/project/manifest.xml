@@ -1,0 +1,35 @@
+<?xml version='1.0' standalone='yes'?>
+<fileset>
+  <file>
+    <path>ec_setup.pl</path>
+    <xpath>//property[propertyName=&quot;ec_setup&quot;]/value</xpath>
+  </file>
+  <file>
+    <path>lib/constructArgs.pl</path>
+    <xpath>//property[propertyName=&quot;constructArgs&quot;]/value</xpath>
+  </file>
+  <file>
+    <path>lib/prepareDeployment.pl</path>
+    <xpath>//property[propertyName=&quot;prepareDeployment&quot;]/value</xpath>
+  </file>
+  <file>
+    <path>lib/spinupDeployAndConfigure.pl</path>
+    <xpath>//property[propertyName=&quot;spinupDeployAndConfigure&quot;]/value</xpath>
+  </file>
+  <file>
+    <path>lib/transferToWindows.pl</path>
+    <xpath>//property[propertyName=&quot;transferToWindows&quot;]/value</xpath>
+  </file>
+  <file>
+    <path>lib/transferToLinux.pl</path>
+    <xpath>//property[propertyName=&quot;transferToLinux&quot;]/value</xpath>
+  </file>
+  <file>
+    <path>lib/setupEcProxy.pl</path>
+    <xpath>//property[propertyName=&quot;setupEcProxy&quot;]/value</xpath>
+  </file>
+  <file>
+    <path>lib/CAMHelper.pm</path>
+    <xpath>//property[propertyName=&quot;CAMHelper.pm&quot;]/value</xpath>
+  </file>
+</fileset>
