@@ -16,7 +16,7 @@ Run `./gradlew` to compile the plugin.
 
 ## Using the pre-compiled plugin
 
-You can find a pre-compiled [EC-SingleSignOnConfigurator.jar](https://github.com/electric-cloud-community/EC-SingleSignOnConfigurator/blob/main/EC-SingleSignOnConfigurator.jar) in the root of this repository. To use it, following the instructions in [Installing the plugin](#installing-the-plugin).
+You can find a pre-compiled [EC-SingleSignOnConfigurator.jar](https://github.com/electric-cloud-community/EC-SingleSignOnConfigurator/blob/main/EC-SingleSignOnConfigurator.jar) in the root of this repository. To use it, follow the instructions in [Installing the plugin](#installing-the-plugin).
 
 ## Installing the plugin
 
