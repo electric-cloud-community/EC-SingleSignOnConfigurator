@@ -12,7 +12,7 @@ If you still want to use this plugin, in theory it is possible. However, CloudBe
 > **_NOTE:_** This plugin has not been updated for sometime, and requires many legacy version libraries. To build the plugin, you must have these required libraries installed.
 > The most feasible option to continue using this plugin is to use the precompiled [EC-SingleSignOnConfigurator.jar](https://github.com/electric-cloud-community/EC-SingleSignOnConfigurator/blob/main/EC-SingleSignOnConfigurator.jar) in the root of this repository.
 
-Run `./gradlew` to compile the plugin.
+If you wish to attempt to complie this plugin, in the root of this repository, run `./gradlew` to compile the plugin.
 
 ## Using the pre-compiled plugin
 
